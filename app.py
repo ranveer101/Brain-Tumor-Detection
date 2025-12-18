@@ -71,11 +71,13 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 model = load_model("brain_tumor_model.keras")
 
 # 🔥 AUTO-DETECT CLASS ORDER (NO JSON FILE)
-TRAIN_DIR = "MRI_images/Training"
-CLASS_NAMES = sorted([
-    folder for folder in os.listdir(TRAIN_DIR)
-    if os.path.isdir(os.path.join(TRAIN_DIR, folder))
-])
+CLASS_NAMES = [
+    "glioma",
+    "meningioma",
+    "no_tumor",
+    "pituitary"
+]
+
 
 print("Detected class order:", CLASS_NAMES)
 
